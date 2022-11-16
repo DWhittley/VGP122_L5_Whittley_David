@@ -25,39 +25,44 @@ int main() {
 	int a = 0, b = 1;
 	Rational F1, F2;
 
-	cout << "Enter the numerator: ";
+	cout << "Enter the numerator of the first fraction: ";
 	cin >> a;
 
 	F1.setNum(a);
 
-	cout << "Enter the denominator: ";
+	cout << "Enter the denominator of the first fraction: ";
 	cin >> b;
 
-	F1.setDem(b);
+	F1.setDen(b);
 
-	cout << "Enter the numerator: ";
+	cout << "Enter the numerator of the second fraction: ";
 	cin >> a;
 
 	F2.setNum(a);
 
-	cout << "Enter the denominator: ";
+	cout << "Enter the denominator of the second fraction: ";
 	cin >> b;
 
-	F2.setDem(b);
+	F2.setDen(b);
 
 	F1.Add(F2);
 	F1.Subtract(F2);
 	F1.Multiply(F2);
 	F1.Divide(F2);
+	F1.GCD(F1);
 	F1.GCD(F2);
+	
 
+	cout << "\n--FIRST FRACTION--" << endl;
 	F1.DisplayFract(F1);
 	F1.DisplayFloat(F1);
 
 	Rational F3(F2);
+	
 
-	cout << "\n--COPIED FRACTION--" << endl;
+	cout << "\n--SECOND FRACTION--" << endl;
 	F3.DisplayFract(F2);
+	F3.DisplayFloat(F2);
 
 	system("Pause");
 

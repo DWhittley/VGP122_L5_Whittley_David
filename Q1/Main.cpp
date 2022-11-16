@@ -27,7 +27,6 @@ void main()
 
 	Date inputedDate = Date(inDay, inMonth, inYear);
 
-	cout << "You entered the date: " << inputedDate.displayDate() << endl;
 	cout << "You entered the day: " << inputedDate.getDay() << endl;
 	cout << "You entered the month: " << inputedDate.getMonth() << endl;
 	cout << "You entered the year: " << inputedDate.getYear() << endl;
@@ -35,6 +34,6 @@ void main()
 	inputedDate.setDay(11);
 	inputedDate.setMonth(11);
 	inputedDate.setYear(1111);
-	cout << "We reset the day to 11/11/1111: " << inputedDate.displayDate() << endl;
+	cout << "We have reset the date directly using the setters to: " << inputedDate.displayDate() << endl;
 }
 
