@@ -55,14 +55,14 @@ int main() {
 
 	cout << "\n--FIRST FRACTION--" << endl;
 	F1.DisplayFract(F1);
-	F1.DisplayFloat(F1);
+	F1.DisplayDouble(F1);
 
 	Rational F3(F2);
 	
 
 	cout << "\n--SECOND FRACTION--" << endl;
 	F3.DisplayFract(F2);
-	F3.DisplayFloat(F2);
+	F3.DisplayDouble(F2);
 
 	system("Pause");
 

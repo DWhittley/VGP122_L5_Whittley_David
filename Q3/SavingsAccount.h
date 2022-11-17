@@ -19,24 +19,32 @@ using namespace std;
 
 class SavingsAccount
 {
-	SavingsAccount();
 
 private:
-	int savingsBalance = 0;
+	float _savingsBalance = 0.00f; // private variable for savings balance
+	float interest;
+	float balance;
 
 public:
-	static float annualInterestRate = 0.03;
+	
+	// Constructor & Destructor
+	SavingsAccount(float interest = 0.001f, float balance = 0.00f);
+	SavingsAccount(const SavingsAccount& aSavingsAccount); //copy constructor... not sure of the functionality of this so not sure if I implemented correctly
+	~SavingsAccount();
 
-	static float modifyInterestRate(float);
+	// Setters
+	float setInt(float i);
+	float setBal(float b); // to fix.... need to be able to manipulate the private variable balance from here
 
-	SavingsAccount(float);
-	{
-		return;
-	}
+	// Getters
+	float getInt() const;
+	float getBal() const;
+	
+	// Account manipulation
+	float BalanceAdjust(SavingsAccount b1);
+	float CalculateMonthlyInterest(SavingsAccount i1);
 
-	static float modifyInterestRate(float newRate)
-	{
-		annualInterestRate = newRate;
-		return;
-	}
+	// Display
+	void DisplayInterestRate(SavingsAccount i2) const;
+	void DisplayAccountBalance(SavingsAccount b2) const;
 }

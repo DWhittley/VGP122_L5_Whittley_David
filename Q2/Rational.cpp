@@ -12,7 +12,7 @@ Rational::Rational(int numerator, int denominator) : numerator(numerator), denom
 Rational::Rational(const Rational& aRational) {
 
 	setNum(aRational.getNum());
-	setDem(aRational.getDem());
+	setDen(aRational.getDen());
 }
 
 Rational::~Rational()
@@ -24,7 +24,7 @@ void Rational::setNum(int a)
 	numerator = a;
 }
 
-void Rational::setDem(int b)
+void Rational::setDen(int b)
 {
 	denominator = b;
 }
@@ -35,7 +35,7 @@ int Rational::getNum() const
 	return numerator;
 }
 
-int Rational::getDem() const
+int Rational::getDen() const
 {
 	return denominator;
 }
@@ -44,7 +44,7 @@ int Rational::getDem() const
 void Rational::GCD(Rational g1)
 {
 
-	int temp = 1, a = g1.getNum(), b = g1.getDem();
+	int temp = 1, a = g1.getNum(), b = g1.getDen();
 
 	if (a < 0) {
 		a *= 1;
@@ -60,8 +60,8 @@ void Rational::GCD(Rational g1)
 		a = temp;
 	}
 
-	cout << "The fraction (" << g1.getNum() << " / " << g1.getDem() << ") can be simplified to (" << g1.getNum() / temp << " / "
-		<< g1.getDem() / temp << ") using the GCD " << temp << "." << endl;
+	cout << "The fraction (" << g1.getNum() << " / " << g1.getDen() << ") can be simplified to (" << g1.getNum() / temp << " / "
+		<< g1.getDen() / temp << ") using the GCD " << temp << "." << endl;
 }
 
 
@@ -99,12 +99,12 @@ int Rational::Simplify(int a, int b)
 void Rational::Add(Rational a1)
 {
 
-	int cd = getDem() * a1.getDem();
-	int Num1 = getNum() * a1.getDem();
-	int Num2 = a1.getNum() * getDem();
+	int cd = getDen() * a1.getDen();
+	int Num1 = getNum() * a1.getDen();
+	int Num2 = a1.getNum() * getDen();
 
 
-	cout << "SUM: (" << getNum() << " / " << getDem() << ") + (" << a1.getNum() << " / " << a1.getDem() << ") = ("
+	cout << "\nSUM: (" << getNum() << " / " << getDen() << ") + (" << a1.getNum() << " / " << a1.getDen() << ") = ("
 		<< (Num1 + Num2) / Simplify(abs(Num1 + Num2), abs(cd)) << " / " << cd / Simplify(abs(Num1 + Num2), abs(cd)) << ")" << endl;
 
 }
@@ -112,30 +112,30 @@ void Rational::Add(Rational a1)
 void Rational::Subtract(Rational s1)
 {
 
-	int cds = getDem() * s1.getDem();
-	int Num3 = getNum() * s1.getDem();
-	int Num4 = s1.getNum() * getDem();
+	int cds = getDen() * s1.getDen();
+	int Num3 = getNum() * s1.getDen();
+	int Num4 = s1.getNum() * getDen();
 
-	cout << "SUBTRACTION: (" << getNum() << " / " << getDem() << ") - (" << s1.getNum() << " / " << s1.getDem() << ") = ("
+	cout << "SUBTRACTION: (" << getNum() << " / " << getDen() << ") - (" << s1.getNum() << " / " << s1.getDen() << ") = ("
 		<< (Num3 - Num4) / Simplify(abs(Num3 - Num4), abs(cds)) << " / " << cds / Simplify(abs(Num3 - Num4), abs(cds)) << ")" << endl;
 }
 
 void Rational::Multiply(Rational m1)
 {
 
-	int cdr = getDem() * m1.getDem();
+	int cdr = getDen() * m1.getDen();
 	int Num5 = getNum() * m1.getNum();
 
-	cout << "MULTIPLICATION: (" << getNum() << " / " << getDem() << ") * (" << m1.getNum() << " / " << m1.getDem() << ") = ("
+	cout << "MULTIPLICATION: (" << getNum() << " / " << getDen() << ") * (" << m1.getNum() << " / " << m1.getDen() << ") = ("
 		<< (Num5) / Simplify(abs(Num5), abs(cdr)) << " / " << cdr / Simplify(abs(Num5), abs(cdr)) << ")" << endl;
 }
 
 void Rational::Divide(Rational d1)
 {
-	int cdd = getDem() * d1.getNum();
-	int Num6 = getNum() * d1.getDem();
+	int cdd = getDen() * d1.getNum();
+	int Num6 = getNum() * d1.getDen();
 
-	cout << "DIVISION: (" << getNum() << " / " << getDem() << ") / (" << d1.getNum() << " / " << d1.getDem() << ") = ("
+	cout << "DIVISION: (" << getNum() << " / " << getDen() << ") / (" << d1.getNum() << " / " << d1.getDen() << ") = ("
 		<< (Num6) / Simplify(abs(Num6), abs(cdd)) << " / " << cdd / Simplify(abs(Num6), abs(cdd)) << ")" << endl;
 }
 
@@ -143,14 +143,14 @@ void Rational::Divide(Rational d1)
 
 void Rational::DisplayFract(Rational f1) const
 {
-	cout << "DISPLAY FRACTION: " << f1.getNum() << " / " << f1.getDem() << endl;
+	cout << "DISPLAY FRACTION: " << f1.getNum() << " / " << f1.getDen() << endl;
 }
 
-void Rational::DisplayFloat(Rational f2) const
+void Rational::DisplayDouble(Rational f2) const // displays float after casting to double
 {
 
 	double q1 = (double)f2.getNum();
-	double q2 = (double)f2.getDem();
+	double q2 = (double)f2.getDen();
 
-	cout << "DISPLAY DECIMAL OF FRACTION: " << f2.getNum() << " / " << f2.getDem() << " = " << q1 / q2 << endl;
+	cout << "DISPLAY DOUBLE: " << f2.getNum() << " / " << f2.getDen() << " = " << q1 / q2 << endl;
 }

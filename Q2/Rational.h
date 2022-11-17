@@ -15,11 +15,11 @@ public:
 
 	// Setters
 	void setNum(int a);
-	void setDem(int b);
+	void setDen(int b);
 
 	// Getters
 	int getNum() const;
-	int getDem() const;
+	int getDen() const;
 
 	// Math
 	void Add(Rational a1);
@@ -31,7 +31,7 @@ public:
 
 	// Display
 	void DisplayFract(Rational f1) const;
-	void DisplayFloat(Rational f2) const;
+	void DisplayDouble(Rational f2) const;
 
 
 private:
