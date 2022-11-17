@@ -36,13 +36,13 @@ int main()
 	cout << "\n\nWith an interest rate of ";
 	A1.DisplayInterestRate(A1);
 	cout << " after one month the balance of account 1 is: ";
-	A1.CalculateMonthlyInterest(A1);
+	A1.BalanceAdjust(A1);
 	A1.DisplayAccountBalance(A1);
 
 	cout << "\n\nWith an interest rate of ";
 	A2.DisplayInterestRate(A2);
-	cout << " after one month the balance of account 1 is: ";
-	A2.CalculateMonthlyInterest(A2);
+	cout << " after one month the balance of account 2 is: ";
+	A2.BalanceAdjust(A2);
 	A2.DisplayAccountBalance(A2);
 
 	A1.setInt(0.04f);
@@ -51,12 +51,12 @@ int main()
 	cout << "\n\nWith an interest rate of ";
 	A1.DisplayInterestRate(A1);
 	cout << " after another month the balance of account 1 is: ";
-	A1.CalculateMonthlyInterest(A1);
+	A1.BalanceAdjust(A1);
 	A1.DisplayAccountBalance(A1);
 
 	cout << "\n\nWith an interest rate of ";
 	A2.DisplayInterestRate(A2);
-	cout << " after another month the balance of account 1 is: ";
-	A2.CalculateMonthlyInterest(A2);
+	cout << " after another month the balance of account 2 is: ";
+	A2.BalanceAdjust(A2);
 	A2.DisplayAccountBalance(A2);
 }

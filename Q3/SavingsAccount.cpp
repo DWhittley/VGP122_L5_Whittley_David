@@ -19,12 +19,12 @@ SavingsAccount::~SavingsAccount()
 {
 }
 
-float SavingsAccount::setInt(float i)
+void SavingsAccount::setInt(float i)
 {
 	_interest = i;
 }
 
-float SavingsAccount::setBal(float b)
+void SavingsAccount::setBal(float b)
 {
 	_balance = b;
 }
@@ -41,18 +41,11 @@ float SavingsAccount::getBal() const
 
 void SavingsAccount::BalanceAdjust(SavingsAccount b1)
 {
-	float b = b1.getBal(), temp = 0;
+	float b = b1.getBal(), temp = 0, i = b1.getInt();
 
-	temp = b + CalculateMonthlyInterest(b); // calculate and add monthly interest calculation to existing balance and store in temp variable
+	temp = (i / 12) * b; // calculate interest accrued on existing balance and store in temp variable
+	temp += b;
 	b1.setBal(temp); // set the new balance
-}
-
-float SavingsAccount::CalculateMonthlyInterest(SavingsAccount i1)
-{
-	float temp = 1, i = i1.getInt(), b = i1.getBal();
-
-	temp = (i / 12) * b; // calculates the monthly interest by multiplying the savingsBalance by annualInterestRate divided by 12
-	return temp;
 }
 
 // Display

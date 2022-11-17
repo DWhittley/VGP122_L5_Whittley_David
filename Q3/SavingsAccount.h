@@ -42,7 +42,6 @@ public:
 
 	// Account manipulation
 	void BalanceAdjust(SavingsAccount b1);
-	float CalculateMonthlyInterest(SavingsAccount i1);
 
 	// Display
 	void DisplayInterestRate(SavingsAccount i2) const;
