@@ -22,29 +22,29 @@ class SavingsAccount
 
 private:
 	float _savingsBalance = 0.00f; // private variable for savings balance
-	float interest;
-	float balance;
+	float _interest;
+	float _balance;
 
 public:
-	
+
 	// Constructor & Destructor
-	SavingsAccount(float interest = 0.001f, float balance = 0.00f);
-	SavingsAccount(const SavingsAccount& aSavingsAccount); //copy constructor... not sure of the functionality of this so not sure if I implemented correctly
+	SavingsAccount(float _interest = 0.001f, float _balance = 0.00f);
+	SavingsAccount(const SavingsAccount& aSavingsAccount); //copy constructor
 	~SavingsAccount();
 
 	// Setters
-	float setInt(float i);
-	float setBal(float b); // to fix.... need to be able to manipulate the private variable balance from here
+	void setInt(float i);
+	void setBal(float b);
 
 	// Getters
 	float getInt() const;
 	float getBal() const;
-	
+
 	// Account manipulation
-	float BalanceAdjust(SavingsAccount b1);
+	void BalanceAdjust(SavingsAccount b1);
 	float CalculateMonthlyInterest(SavingsAccount i1);
 
 	// Display
 	void DisplayInterestRate(SavingsAccount i2) const;
 	void DisplayAccountBalance(SavingsAccount b2) const;
-}
+};

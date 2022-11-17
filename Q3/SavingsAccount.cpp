@@ -5,7 +5,7 @@
 
 using namespace std;
 
-SavingsAccount::SavingsAccount(float interest, float balance) : interest(interest), balance(balance)
+SavingsAccount::SavingsAccount(float _interest, float _balance) : _interest(_interest), _balance(_balance)
 {
 }
 
@@ -21,25 +21,25 @@ SavingsAccount::~SavingsAccount()
 
 float SavingsAccount::setInt(float i)
 {
-	interest = i;
+	_interest = i;
 }
 
 float SavingsAccount::setBal(float b)
 {
-	balance = b;
+	_balance = b;
 }
 
 float SavingsAccount::getInt() const
 {
-	return interest;
+	return _interest;
 }
 
 float SavingsAccount::getBal() const
 {
-	return balance;
+	return _balance;
 }
 
-float SavingsAccount::BalanceAdjust(SavingsAccount b1)
+void SavingsAccount::BalanceAdjust(SavingsAccount b1)
 {
 	float b = b1.getBal(), temp = 0;
 
