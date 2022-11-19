@@ -45,6 +45,7 @@ void SavingsAccount::BalanceAdjust(SavingsAccount b1)
 
 	temp = (i / 12) * b; // calculate interest accrued on existing balance and store in temp variable
 	temp += b;
+	cout << "(calculation of new balance = " << temp << ")";
 	b1.setBal(temp); // set the new balance
 }
 
@@ -53,7 +54,7 @@ void SavingsAccount::DisplayInterestRate(SavingsAccount i2) const
 {
 	cout << i2.getInt();
 }
-void SavingsAccount::DisplayAccountBalance(SavingsAccount b2) const
+void SavingsAccount::DisplayAccountBalance(SavingsAccount b1) const
 {
-	cout << b2.getBal();
+	cout << "$" << b1.getBal();
 }

@@ -24,22 +24,22 @@ int main()
 
 	A1.setBal(2000.00f);
 	A2.setBal(3000.00f);
-	
-	cout << "The initial balance in account 1 is: ";
+
+	cout << "The initial balance in account 1 is: $";
 	A1.DisplayAccountBalance(A1);
-	cout << "\nThe inital balance in accunt 2 is: ";
+	cout << "\nThe inital balance in accunt 2 is: $";
 	A2.DisplayAccountBalance(A2);
 
 	A1.setInt(0.03f);
 	A2.setInt(0.03f);
 
-	cout << "\n\nWith an interest rate of ";
+	cout << "\n\nWith an annual interest rate of ";
 	A1.DisplayInterestRate(A1);
 	cout << " after one month the balance of account 1 is: ";
 	A1.BalanceAdjust(A1);
 	A1.DisplayAccountBalance(A1);
 
-	cout << "\n\nWith an interest rate of ";
+	cout << "\n\nWith an annual interest rate of ";
 	A2.DisplayInterestRate(A2);
 	cout << " after one month the balance of account 2 is: ";
 	A2.BalanceAdjust(A2);
@@ -48,15 +48,19 @@ int main()
 	A1.setInt(0.04f);
 	A2.setInt(0.04f);
 
-	cout << "\n\nWith an interest rate of ";
+	cout << "\n\nWith an annual interest rate of ";
 	A1.DisplayInterestRate(A1);
 	cout << " after another month the balance of account 1 is: ";
 	A1.BalanceAdjust(A1);
 	A1.DisplayAccountBalance(A1);
 
-	cout << "\n\nWith an interest rate of ";
+	cout << "\n\nWith an annual interest rate of ";
 	A2.DisplayInterestRate(A2);
 	cout << " after another month the balance of account 2 is: ";
 	A2.BalanceAdjust(A2);
 	A2.DisplayAccountBalance(A2);
+
+	/*delete SavingsAccount(A1);
+	delete SavingsAccount(A2);*/
 }
+
