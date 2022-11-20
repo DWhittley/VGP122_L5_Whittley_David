@@ -59,8 +59,5 @@ int main()
 	cout << " after another month the balance of account 2 is: ";
 	Saver2.calculateMonthlyInterest();
 	Saver2.DisplayAccountBalance();
-
-	/*delete SavingsAccount();
-	delete SavingsAccount();*/
 }
 

@@ -1,5 +1,6 @@
 #include <iostream>
 #include<cmath>
+#include<iomanip>
 
 #include "SavingsAccount.h"
 
@@ -45,7 +46,8 @@ void SavingsAccount::calculateMonthlyInterest()
 
 	temp = (_interest / 12) * _balance; // calculate interest accrued on existing balance and store in temp variable
 	_balance += temp;
-	cout << "(accurred interest = $" << temp << ") ";
+	cout << setprecision(2) << fixed;
+	cout << "(accrued interest = $" << temp << ") ";
 }
 
 // Display
