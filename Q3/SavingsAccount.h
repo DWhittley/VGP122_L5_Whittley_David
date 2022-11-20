@@ -41,9 +41,9 @@ public:
 	float getBal() const;
 
 	// Account manipulation
-	void BalanceAdjust(SavingsAccount b1);
+	void calculateMonthlyInterest();
 
 	// Display
-	void DisplayInterestRate(SavingsAccount i2) const;
-	void DisplayAccountBalance(SavingsAccount b2) const;
+	void DisplayInterestRate() const;
+	void DisplayAccountBalance() const;
 };

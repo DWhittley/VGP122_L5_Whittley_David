@@ -20,47 +20,47 @@ using namespace std;
 int main()
 {
 	float i = 0.001f, b = 0.00f, newI = 0.000f;
-	SavingsAccount A1, A2;
+	SavingsAccount Saver1, Saver2;
 
-	A1.setBal(2000.00f);
-	A2.setBal(3000.00f);
+	Saver1.setBal(2000.00f);
+	Saver2.setBal(3000.00f);
 
-	cout << "The initial balance in account 1 is: $";
-	A1.DisplayAccountBalance(A1);
-	cout << "\nThe inital balance in accunt 2 is: $";
-	A2.DisplayAccountBalance(A2);
+	cout << "The initial balance in account 1 is: ";
+	Saver1.DisplayAccountBalance();
+	cout << "\nThe inital balance in accunt 2 is: ";
+	Saver2.DisplayAccountBalance();
 
-	A1.setInt(0.03f);
-	A2.setInt(0.03f);
+	Saver1.setInt(0.03f);
+	Saver2.setInt(0.03f);
 
 	cout << "\n\nWith an annual interest rate of ";
-	A1.DisplayInterestRate(A1);
+	Saver1.DisplayInterestRate();
 	cout << " after one month the balance of account 1 is: ";
-	A1.BalanceAdjust(A1);
-	A1.DisplayAccountBalance(A1);
+	Saver1.calculateMonthlyInterest();
+	Saver1.DisplayAccountBalance();
 
 	cout << "\n\nWith an annual interest rate of ";
-	A2.DisplayInterestRate(A2);
+	Saver2.DisplayInterestRate();
 	cout << " after one month the balance of account 2 is: ";
-	A2.BalanceAdjust(A2);
-	A2.DisplayAccountBalance(A2);
+	Saver2.calculateMonthlyInterest();
+	Saver2.DisplayAccountBalance();
 
-	A1.setInt(0.04f);
-	A2.setInt(0.04f);
+	Saver1.setInt(0.04f);
+	Saver2.setInt(0.04f);
 
 	cout << "\n\nWith an annual interest rate of ";
-	A1.DisplayInterestRate(A1);
+	Saver1.DisplayInterestRate();
 	cout << " after another month the balance of account 1 is: ";
-	A1.BalanceAdjust(A1);
-	A1.DisplayAccountBalance(A1);
+	Saver1.calculateMonthlyInterest();
+	Saver1.DisplayAccountBalance();
 
 	cout << "\n\nWith an annual interest rate of ";
-	A2.DisplayInterestRate(A2);
+	Saver2.DisplayInterestRate();
 	cout << " after another month the balance of account 2 is: ";
-	A2.BalanceAdjust(A2);
-	A2.DisplayAccountBalance(A2);
+	Saver2.calculateMonthlyInterest();
+	Saver2.DisplayAccountBalance();
 
-	/*delete SavingsAccount(A1);
-	delete SavingsAccount(A2);*/
+	/*delete SavingsAccount();
+	delete SavingsAccount();*/
 }
 

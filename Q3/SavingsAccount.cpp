@@ -39,22 +39,21 @@ float SavingsAccount::getBal() const
 	return _balance;
 }
 
-void SavingsAccount::BalanceAdjust(SavingsAccount b1)
+void SavingsAccount::calculateMonthlyInterest()
 {
-	float b = b1.getBal(), temp = 0, i = b1.getInt();
+	float temp = 0;
 
-	temp = (i / 12) * b; // calculate interest accrued on existing balance and store in temp variable
-	temp += b;
-	cout << "(calculation of new balance = " << temp << ")";
-	b1.setBal(temp); // set the new balance
+	temp = (_interest / 12) * _balance; // calculate interest accrued on existing balance and store in temp variable
+	_balance += temp;
+	cout << "(accurred interest = $" << temp << ") ";
 }
 
 // Display
-void SavingsAccount::DisplayInterestRate(SavingsAccount i2) const
+void SavingsAccount::DisplayInterestRate() const
 {
-	cout << i2.getInt();
+	cout << _interest;
 }
-void SavingsAccount::DisplayAccountBalance(SavingsAccount b1) const
+void SavingsAccount::DisplayAccountBalance() const
 {
-	cout << "$" << b1.getBal();
+	cout << "$" << _balance;
 }
